@@ -30,6 +30,7 @@ do { \
     if (err) goto RET; \
 } while (0)
 
+
 typedef struct internal_bsem_s {
     pthread_mutex_t mtx;
     pthread_cond_t cond;
