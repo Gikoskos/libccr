@@ -220,7 +220,7 @@ int total_items = 0;
 
 void *producer_thread_func(void *args)
 {
-    /* producing the data */
+	/* producing the data */
 	char new_data = rand();
 
 	CCR_EXEC(
@@ -251,8 +251,8 @@ void *consumer_thread_func(void *args)
 		 }
 		)
 
-    /* consuming the data */
-    printf("Consumer read %d\n", (int)read_data);
+	/* consuming the data */
+	printf("Consumer read %d\n", (int)read_data);
 
 	return NULL;
 }
