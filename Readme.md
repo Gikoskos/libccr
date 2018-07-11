@@ -22,7 +22,7 @@ A CCR guarantees mutual exclusion and fairness (no starvation) when checking whe
 
 ## How to use
 
-This library comes in two flavors: a [macro-only implementation](Doc.md#macro-api) that works simply by including the header file `ccr.h`, and a [regular library](#Doc.md#library-api) `ccr.c` that can be compiled statically, and interfaced with, using the library API.
+This library comes in two flavors: a [macro-only implementation](Doc.md#macro-api) that works simply by including the header file `ccr.h`, and a [regular library](Doc.md#library-api) `ccr.c` that can be compiled statically, and interfaced with, using the library API.
 
 [Documentation and tutorials here](Doc.md).
 

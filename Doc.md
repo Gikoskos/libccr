@@ -166,17 +166,17 @@ int counter;
 void *thread_func(void *args)
 {
 	CCR_EXEC(
-			 /* name of the region */
-	         my_region,
+		 /* name of the region */
+		 my_region,
 
-			 /* condition */
-			 1,
+		 /* condition */
+		 1,
 
-			 /* critical section */
-			 {
-			  counter + 1;
-			 }
-			)
+		 /* critical section */
+		 {
+		  counter + 1;
+		 }
+		)
 	return NULL;
 }
 
@@ -226,13 +226,13 @@ void *producer_thread_func(void *args)
 	CCR_EXEC(
 	         buffer_region,
 
-			 total_items < BUFFER_CAPACITY,
+		 total_items < BUFFER_CAPACITY,
 
-			 {
-			   buffer[total_items++] = new_data;
-			   printf("Producer put %d\n", (int)new_data);
-			 }
-			)
+		 {
+		   buffer[total_items++] = new_data;
+		   printf("Producer put %d\n", (int)new_data);
+		 }
+		)
 
 	return NULL;
 }
@@ -244,12 +244,12 @@ void *consumer_thread_func(void *args)
 	CCR_EXEC(
 	         buffer_region,
 
-			 total_items > 0,
+		 total_items > 0,
 
-			 {
-			   read_data = buffer[total_items--];
-			 }
-			)
+		 {
+		   read_data = buffer[total_items--];
+		 }
+		)
 
     /* consuming the data */
     printf("Consumer read %d\n", (int)read_data);
@@ -292,12 +292,12 @@ and then tries to put it in the buffer, using the region. If the buffer is full,
 	CCR_EXEC(
 	         buffer_region,
 
-			 total_items < BUFFER_CAPACITY,
+		 total_items < BUFFER_CAPACITY,
 
-			 {
-			   buffer[total_items++] = new_data;
-			 }
-			)
+		 {
+		   buffer[total_items++] = new_data;
+		 }
+		)
 ```
 
 So the producer thread blocks, as long as there's not enough space in the buffer to put his data in. 
@@ -310,12 +310,12 @@ The consumer thread, on the other hand, tries to read data from the buffer and "
 	CCR_EXEC(
 	         buffer_region,
 
-			 total_items > 0,
+		 total_items > 0,
 
-			 {
-			   read_data = buffer[total_items--];
-			 }
-			)
+		 {
+		   read_data = buffer[total_items--];
+		 }
+		)
 ```
 
 
@@ -410,15 +410,15 @@ void *producer_thread_func(void *args)
 {
 	ccr_s *buffer_region = (ccr_s *)args;
 
-    /* producing the data */
+	/* producing the data */
 	char new_data = rand();
 
 	ccr_exec(buffer_region,
-			 producer_cond,
-			 NULL,
-			 producer_body,
-			 (void*)&new_data
-			);
+		 producer_cond,
+		 NULL,
+		 producer_body,
+		 (void*)&new_data
+		);
 
 	return NULL;
 }
@@ -441,11 +441,11 @@ void *consumer_thread_func(void *args)
 	char read_data;
 
 	ccr_exec(buffer_region,
-			 consumer_cond,
-			 NULL,
-			 consumer_body,
-			 (void*)&read_data
-			);
+		 consumer_cond,
+		 NULL,
+		 consumer_body,
+		 (void*)&read_data
+		);
 
 	/* consuming the data */
 	printf("Consumer read %d\n", (int)read_data);
