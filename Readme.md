@@ -1,4 +1,4 @@
-<h1 style="font-size: 50px; text-align: center; text-shadow: 1px 5px 1px lightgrey; font-family: "Lucida Console", Monaco, monospace;"> libccr </h1>
+# libccr
 
 ![Travis](https://img.shields.io/travis/Gikoskos/libccr.svg?style=flat-square)
 
