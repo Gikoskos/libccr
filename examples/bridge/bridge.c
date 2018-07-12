@@ -2,14 +2,15 @@
 # undef _GNU_SOURCE
 #endif
 
-#define CCR_MACRO_LIB 1
-#include <ccr.h>
 
 #ifdef _POSIX_C_SOURCE
 # undef _POSIX_C_SOURCE
 #endif
 
 #define _POSIX_C_SOURCE 200112L
+
+#define CCR_MACRO_LIB 1
+#include <ccr.h>
 
 #include <errno.h>
 #include <string.h>

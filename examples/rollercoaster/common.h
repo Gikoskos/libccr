@@ -1,9 +1,6 @@
 #ifndef COMMON_HEADER_ROLLERCOASTER_
 #define COMMON_HEADER_ROLLERCOASTER_
 
-#define CCR_MACRO_LIB 1
-#include <ccr.h>
-
 /* get XSI-compliant strerror_r */
 #ifdef _GNU_SOURCE
 # undef _GNU_SOURCE
@@ -15,6 +12,8 @@
 
 #define _POSIX_C_SOURCE 200112L
 
+#define CCR_MACRO_LIB 1
+#include <ccr.h>
 #include <errno.h>
 #include <string.h>
 
