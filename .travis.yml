@@ -13,4 +13,9 @@ addons:
         packages:
             - cmake
 
-script: mkdir build && cd build && cmake ..
+script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - ./test_lib
+    - ./test_macro

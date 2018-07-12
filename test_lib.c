@@ -3,6 +3,7 @@
 #include <errno.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <assert.h>
 #include "ccr.h"
 
 #define N 10
@@ -97,6 +98,8 @@ int main(void)
     free(thrds);
 
     ccr_destroy(test_ccr);
+
+    assert(counter == 3);
 
     return 0;
 }

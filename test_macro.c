@@ -59,5 +59,7 @@ int main(void)
 
     free(thrds);
 
+    assert(counter == 3);
+
     return 0;
 }
