@@ -60,7 +60,7 @@ do { \
     if (__tmp_err_code) { \
         fprintf(stderr, "%sFatal call:\t%s%s\n" \
                         "%sat %s -> %s():%d%s\n" \
-                        "%sError code: %d\n", \
+                        "%sError code: %d%s\n", \
                         CCR_TERM_COLOR_RED, CCR_MAKE_STR(call), CCR_TERM_COLOR_RESET, \
                         CCR_TERM_COLOR_RED, file, caller, line, CCR_TERM_COLOR_RESET, \
                         CCR_TERM_COLOR_RED, __tmp_err_code, CCR_TERM_COLOR_RESET); \
