@@ -1,0 +1,16 @@
+language: c
+
+os:
+    - linux
+    - osx
+
+compiler:
+    - clang
+    - gcc
+
+addons:
+    apt:
+        packages:
+            - cmake
+
+script: mkdir build && cd build && cmake ..

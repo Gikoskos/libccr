@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -pthread -g -Wall -Wextra -pedantic -std=c99 -I../4
+CFLAGS = -pthread -g -Wall -Wextra -pedantic -std=c99 -I../../
 LINKER =
 
 SRC = $(wildcard *.c)

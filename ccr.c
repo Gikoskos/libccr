@@ -1,7 +1,5 @@
 #include <ccr.h>
 
-#define _XOPEN_SOURCE 700
-
 #include <pthread.h>
 #include <stdlib.h>
 #include <errno.h> //errno macros
