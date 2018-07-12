@@ -10,6 +10,8 @@
 
 #if CCR_MACRO_LIB == 1
 
+#define _XOPEN_SOURCE 700
+
 # include <pthread.h>
 # include <stdio.h> //fprintf
 # include <stdlib.h> //exit
