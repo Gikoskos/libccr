@@ -17,5 +17,13 @@ script:
     - mkdir build
     - cd build
     - cmake ..
+    - make
     - ./test_lib
     - ./test_macro
+    - cd ..
+    - cd examples
+    - cd bridge
+    - make
+    - cd ..
+    - cd rollercoaster
+    - make

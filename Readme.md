@@ -1,4 +1,6 @@
-# libccr
+<h1 style="font-size: 50px; text-align: center; text-shadow: 1px 5px 1px lightgrey; font-family: "Lucida Console", Monaco, monospace;"> libccr </h1>
+
+![Travis](https://img.shields.io/travis/Gikoskos/libccr.svg?style=flat-square)
 
 Simple and easy-to-use conditional critical regions (CCR) with pthreads in C.
 

@@ -1,6 +1,7 @@
 #define CCR_MACRO_LIB 1
 #include "ccr.h"
 #include <unistd.h>
+#include <assert.h>
 
 #define N 10
 
@@ -34,8 +35,7 @@ int main(void)
            "they enter the CCR, and decrement it by one when they\n"
            "leave from it. For the CCR to function properly, the\n"
            "integer is expected to have the value %d when all\n"
-           "threads are done.\n"
-           "Press [ENTER] to start the simulation.", N, counter, counter);
+           "threads are done.\n\n", N, counter, counter);
 
     pthread_t *thrds = malloc(sizeof(pthread_t) * N);
 
@@ -49,9 +49,7 @@ int main(void)
         pthread_create(&thrds[i], NULL, test_thrd, (void*)num);
     }
 
-    CCR_EXEC(test, 1, {
-        c = getchar();
-    });
+    c = 1;
 
     for (int i = 0; i < N; i++) {
         pthread_join(thrds[i], NULL);
